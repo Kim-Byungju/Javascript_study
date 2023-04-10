@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 
+	선언위치에 따라  지역변수와 전역변수, 블록변수로 나뉜다.
+
+		.전역변수 : 함수밖에서 선언된 함수(var같은 경우 함수안에서 선언없이 사용한 변수도 포함)
+		.지역변수 : 함수안에서 선언된 변수
+		.블록변수 : if, while, for문안에서 선언된 함수 -블록안에서만 사용가능
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>지역변수와 전역변수</title>
+</head>
+<body>
+	<h3>지역변수 전역변수</h3>
+	<hr>
+	<script>
+		var x = 100;
+
+		//함수정의
+		function f(){
+			var x=1;
+			x=10000;
+
+			y=5000; /* 함수안에서 선언하지 않고 사용한 변수는 전역변수이다. */
+
+			document.write("지역변수:"+x);
+			document.write("<br>");
+			document.write("전역변수:"+this.x);
+			document.write("<br>");
+			document.write("전역변수:"+y);
+			document.write("<br>********************<br>");
+		}
+
+		//함수 호출 - 이때 실행된다.
+		f();
+		document.write("전역변수 x:"+x);
+		document.write("<br>");
+		document.write("전역변수 y:"+y);
+	</script>
+
+</body>
+</html>

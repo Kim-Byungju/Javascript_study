@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 	
+	변수
+		. 사용하는 순간(선언) 자동으로 생성되고(객체생성)
+		. 자료를 대입하는  순간 자료형도 결정된다.
+
+	형변환(type conversion)
+		. 문자와 숫자가 연결되면 문자형으로 자동 형변환된다.
+		. 자바스크립트는 자동 형변환이 되어 개발자가 문제가 되곤한다.
+		   "10" 10
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		
+		document.write("<h3>자바스크립트의 자동형변환</h3>");
+
+		document.write('10'+'5'+"<br>");  //문자+문자  = 결합
+		document.write('10'+5+'<br>');  // 문자+숫자 = 결합
+		document.write(10+5+'<br>');  // 숫자+숫자 = 연산
+		document.write('가'+10+5+'<br>');  // 가105(하나라도 문자가있으면 결합)
+		document.write(10+3+true+'<br>');  // true 1, false 0의 상수값.
+		document.write("*************<br>");
+
+		document.write('10'-5+'<br>');  //연산 5
+		document.write('10'-'5'+'<br>');  //연산 5
+		document.write('10'*'5'+'<br>'); //연산50
+		document.write('10'/'5'+'<br>'); //연산2
+		document.write('10'%'3'+'<br>'); //연산 나머지 1
+
+		document.write("<h3>더하기를 제외한 산술연산에서"+
+			 "피연산자의 숫자문자는 숫자로 형변환되어 연산된다.</h3>")
+	</script>
+</body>
+</html>

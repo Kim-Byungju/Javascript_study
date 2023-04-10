@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!--
+
+	자료형의 종류
+		. Number - 부동소수점형
+		. String - "", ''구분하지않는다.
+		. Undefined - 아무것도 존재하지않는 다는 표현
+					- 값이 할당되지않는 변수에 브라우저 엔징이 할당
+		. Null      - 아무것도 존재하지 않는다는 표현
+					- 개발자가 어떤값을 할당할지 모를 때 부여
+		.NaN		- 숫자가 아님(Not a Number)
+		.객체(Object) - 자바스크립트는 모든것은 객체이다.(참조변수인이유?)- 주소값을 전달받음..
+		.배열(Array)
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<Script>
+		let int = 3;
+		let oct = 051; //8진수    000 101 010 --> 000101010 > 32+8+2=42
+		let hex = 0xA9; //16진수 1010 1001 ---> 10101001 > 128+32+8+1=169
+		let flaoat = 3.14;
+		let char = '자바스크립트';
+
+		let boolean = true;
+
+		let num = null;
+		document.write(num+"<br>");
+
+		num = undefined;
+		document.write(num+"<br>");
+
+		document.write((undefined == null)+"<br>");
+	</Script>
+</head>
+<body>
+
+</body>
+</html>

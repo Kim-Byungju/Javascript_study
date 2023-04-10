@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- 
+	호이스팅
+		.코드를 실행하기전에 코드에 있는 변수들을 상단으로 끌어 올리는것을 말한다.
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	console.log(num);   //값이 미지정 - undefined(=null)
+	var num = 100; //값을 지정
+	console.log(num); //값이 출력
+
+	function f(){
+		document.write("이름 : "+name+"<br>");
+	}
+	</script>
+</head>
+<body>
+	<script>
+		f();
+		var name="홍길동이";  /* let? 호이스팅 안된다 */
+		f();
+	</script>
+
+</body>
+</html>
