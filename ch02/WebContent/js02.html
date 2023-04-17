@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	두수를 입력 받는다.
+
+	<h3>사칙연산의 결과값을 출력한다.</h3> - 결과값 글자색 빨강
+	(+,-,*,/,%)					 - 소숫점 2자리 까지만 출력	
+
+ -->
+ <script>
+	 num1 = parseInt(prompt("숫자를입력하시오"));
+	 num2 = parseInt(prompt("숫자를입력하시오"));
+
+	 document.write("<h3>"+num1+"+"+num2+":"+(num1+num2)+"</h3>");
+	 document.write("<h3>"+num1+"-"+num2+":"+(num1-num2)+"</h3>");
+	 document.write("<h3>"+num1+"*"+num2+":"+(num1*num2)+"</h3>");
+	 document.write("<h3>"+num1+"/"+num2+":"+(num1/num2).toFixed(2)+"</h3>");
+	 document.write("<h3>"+num1+"%"+num2+":"+(num1%num2)+"</h3>");
+ </script>
+</head>
+<body>
+
+</body>
+</html>

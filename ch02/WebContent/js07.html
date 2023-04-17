@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		let a = 106;
+		let b = 77;
+
+		document.write("a&b ="+(a&b)+"<br>");
+/* 
+		128  64  32  16  8  4  2  1
+  a=106 0    1    1   0  1  0  1  0  
+  b=77  0    1    0   0  1  1  0  1
+
+  ----------------------------------
+  &     0    1    0   0  1  0  0  0  >>64+8=72
+
+ */	
+		document.write("a|b ="+(a|b)+"<br>");
+		document.write("a^b ="+(a^b)+"<br>");
+	</script>
+
+</body>
+</html>
