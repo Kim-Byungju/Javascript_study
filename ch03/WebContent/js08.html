@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		background-image: url("./img/티벳여우3.jpg");
+	}
+</style>
+</head>
+<body>
+	
+	<script>
+		document.write("<ul>")
+			document.write("<li><a href='#1dan'>1단 구구단</a></li>");	
+			document.write("<li><a href='#2dan'>2단 구구단</a></li>");	
+			document.write("<li><a href='#3dan'>3단 구구단</a></li>");	
+			document.write("<li><a href='#4dan'>4단 구구단</a></li>");	
+			document.write("<li><a href='#5dan'>5단 구구단</a></li>");	
+			document.write("<li><a href='#6dan'>6단 구구단</a></li>");	
+			document.write("<li><a href='#7dan'>7단 구구단</a></li>");	
+			document.write("<li><a href='#8dan'>8단 구구단</a></li>");	
+			document.write("<li><a href='#9dan'>9단 구구단</a></li>");	
+		document.write("</ul>")
+
+
+		for(i=1; i<=9; i++){
+			document.write("<a id='"+i+"dan'><strong>"+i+"단</strong></a><br>");
+			document.write("<hr>");
+			document.write("<br>");
+			document.write("<br>");
+
+			for(j=1; j<=9; j++){
+			document.write("<p>"+i+"*"+j+"="+i*j+"</p><br>");
+			}
+		}
+		
+	</script>
+</body>
+</html>

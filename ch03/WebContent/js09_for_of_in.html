@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- 
+	
+	for ~ in
+	for ~ of
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		//객체 생성
+		let person = {
+			first_name: "홍", 
+			last_name:"길동", 
+			age:25
+		};
+
+		document.write("<h3>성:"+person["first_name"]+"</h3>")
+		document.write("<h3>이름:"+person.last_name+"</h3>")
+		document.write("<h3>나이:"+person.age+"</h3>")
+
+
+		//반복문에서 객체 출력하기 :  for+ 타입 변수명 in 객체명
+ 		for(const key in person){
+			document.write("<h3>"+key+":"+person[key]+"</h3>");
+		}
+
+		let brands = ["삼성", "구글", "애플", "현대", "엘쥐"];
+
+		//반복문에서 객체 출력하기 :  for~of
+		for(const brand of brands) {
+			document.write("<h3>"+brand+"</h3>");
+		}
+
+
+	</script>
+</body>
+</html>

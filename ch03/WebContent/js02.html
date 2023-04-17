@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	num1 = parseInt(prompt("입력하시오1"));
+	num2 = parseInt(prompt("입력하시오2"));
+
+	max = 0;
+	min = 0;
+	
+	if(num1>num2) {
+		max = num1;
+		min = num2;
+		document.write("<div style='background-color: skyblue; width: 200px; height: 200px; margin:0 auto;'>max : "+max+"</div><br>");
+		document.write("<div style='background-color: skyblue; width: 200px; height: 200px; margin:0 auto;'>min : "+min+"</div><br>");
+	} else if(num2>num1){
+		max = num2;
+		min = num1;
+		document.write("<div style='background-color: skyblue; width: 200px; height: 200px; margin:0 auto;'>max : "+max+"</div><br>");
+		document.write("<div style='background-color: skyblue; width: 200px; height: 200px; margin:0 auto;'>min : "+min+"</div><br>");
+	} 
+	
+
+	//num1과 num2를 입력받는다.
+	//num1과 num2를 비교해서 큰것을 max,작은것은 min으로 구한다.
+	//그 결과를 .. div영역 200*200크기에 skyblue 칼라로 하고 
+	//			div를 화면의 중간에 정렬시킨다. 
+</script>
+</head>
+<body>
+
+</body>
+</html>
