@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		let str = "please visit seoul and seoul"
+		let n = str.replace(/Seoul/g, "jeju");
+		console.log(n);
+
+		//날짜를 입력받는다...2023-4-15" 형식으로 입력되었다.
+		//2023/4/15 형식으로 일괄변
+		let date =prompt("날짜를 입력하시오");
+		for(let i=0; i<date.length; i++){
+			document.write(date[i].replace("-","/"));
+		}
+	</script>
+</body>
+</html>

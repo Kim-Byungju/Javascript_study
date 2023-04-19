@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function compute(){
+		total = parseInt(form1['kor'].value)+parseInt(form1['math'].value);
+		avg = total/2;
+		alert(form1['stuName'].value+'학생의 평균성적은'+avg+"입니다.");
+	}
+</script>
+</head>
+<body>
+	<h3>문자열(name,key)인덱스를 활용한 배열원소 참조</h3>
+	<hr>
+
+	<form name ='form1' action="" method="">
+		이름 :<input type="text" name='stuName' value="" placeholder="">
+		<br>
+		국어성적 : <input type="text" name="kor" value=""><br>
+		수학성적 : <input type="text" name="math" value=""><br><br>
+
+		<button type="button" onclick="compute()">성적처리결과</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이차원배열</title>
+<style>
+	
+</style>
+<script>
+	let studentArr = new Array(
+		['강민성','수학',70,83],
+		['신은수','행정',92,95],
+		['이은주','물리',85,92],
+		['조우진','건축',97,88],
+	);
+
+	let student = new Array(
+		new Array('강민성','수학',70,83),
+		new Array('신은수','행정',92,95),
+		new Array('이은주','물리',92,95),
+		new Array('조우진','건축',92,95),
+	);
+
+	//student 배열속에 값을 테이블에 가져와서 작성한다.
+	//student[i][j]
+	document.write("<table border='1'>")
+	for(i = 0; i<studentArr.length; i++){
+			document.write("<tr>")
+		for(j=0; j<studentArr[i].length; j++) {
+			document.write("<td>"+studentArr[i][j]+"</td>");
+		}
+		document.write("</tr>")
+	}
+	document.write("</table>")
+
+	//값을 수정 할때는 
+	studentArr[0][0] = "값"; //값 수정
+</script>
+</head>
+<body>
+
+</body>
+</html>

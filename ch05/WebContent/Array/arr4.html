@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function f() {
+		return "안녕하세요";
+	}
+	let arr = [1,2,3,"자바스크립트",f(),new Date(), null, true];
+	document.write("arr[0] "+arr[0]+"<br>");
+	document.write("arr[1] "+arr[1]+"<br>");
+	document.write("arr[2] "+arr[2]+"<br>");
+	document.write("arr[3] "+arr[3]+"<br>");
+
+	//함수 - 리턴값
+	document.write("arr[4] "+arr[4]+"<br>");
+
+	//객체
+	document.write("arr[5] 오늘은 : "+arr[5].getFullYear()+"년"+arr[5].getMonth()+"월"+arr[5].getDay()+"일<br>");
+
+	//반목문
+	document.write("<hr>");
+	for(i=0; i<arr.length; i++) {
+		document.write(arr[i]+"<br>");
+	}
+	document.write("<hr>");
+
+	for(a in arr){                      //인덱스가없는건 for of로
+		document.write(arr[a]+"<br>");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

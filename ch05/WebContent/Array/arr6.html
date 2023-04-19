@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- 
+	.연관 배열(associative array)
+		- 배열에서 인덱스 대신에 name으로 지원하는 배열
+		- 내부적으로는 Object 객체로 변환활용할뿐 이다.
+		- Array객체가 갖는 메소드를 지원받지 못한다.
+
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let score = new Array();
+	let season = new Array('봄','여름','가을','겨울');
+	let subject = "java";
+	document.write(subject[1]+"<br>")
+
+	score['web'] = 75;
+	score['subject'] = 92;
+	score['project'] = 85;
+
+	document.write("score배열길이 :"+score.length+"<br>");
+
+	for(i=0; i<score.length; i++) {									//출력안됨, 인덱스로는 검색 불가..
+		document.write(score[i]);
+	}
+
+	for(k in score){												// for in으로 출력가능...	
+		document.write(score[k]+"<br>");
+	}
+
+	document.write("<hr>");
+	//season 배열에 mar 춘곤기, sep 환절기 추가하고 길
+	// for , for in 전체값 출력
+	season['mar'] = '춘곤기';	
+	season['sep'] = '환절기';
+
+	for(a in season) {
+		document.write(season[a]+"<br>");
+	}
+	document.write("<hr>");
+	//student배열에  홍길동, 궁예, 원효대사, 정부장, 이주연 명단을 초기화하고
+	//전입생1 방탄, 전입생2, 블핑 추가, 전체 출력
+	let student=['홍길동 ','궁예','정부장','원효대사'];
+	student['전입생1'] = '방탄';
+	student['전입생2'] = '블핑';
+
+	for(i in student) {
+		document.write(student[i]+"<br>");
+	}
+	
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

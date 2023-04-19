@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	
+	function getIntervalDate(day){
+
+	//prompt로 받은 이전 또는 이후 날짜를 가지고
+	let now = new Date();
+	//일을 밀리초로 환산 : 24*60*60
+	let dayMilliseconds = 60*60*24*1000;
+	//return new Date(현재시간+받은시간): getTime()활용
+	return new Date(now.getTime()+(dayMilliseconds*day));
+	}
+</script>
+</head>
+<body>
+<script>
+	//prompt() 몇일전(-) 후(+)의 날짜를 알고싶은가?
+	let IntervalDate = prompt("몇일 전(-)후(+)의 날짜를 알고싶은가요?");
+	let d = getIntervalDate(IntervalDate);
+	let year = d.getFullYear(); 
+	let month=d.getMonth()+1;
+	let date = d.getDate();
+	//년(d.getFullYear()), 월,일로 출력해준다.
+	document.write (year+"년"+months+"월"+date+"일");
+</script>
+</body>
+</html>
