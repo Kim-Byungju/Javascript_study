@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- 
+	함수
+		.함수, 메소드라 한다.
+		.특정 작업을 여러번  반복하는 경우 재사용 가능한 구조로 만들어 놓은 코드블록
+
+	1.함수 선언식 - 호이스팅가능 (선언대신 호출먼저 작성해도 실행가능)
+			- 선언, 정의
+				function 함수명(파라미터(매개변수), 파라미터,,){
+					실행코드;
+					실행코드;
+					~
+					return 반환값;
+				}
+			- 호출
+				함수명(값, 값,,)
+	2.함수표현식 - 호이스팅불가
+			- 선언
+				let f = function(파라미터,파라미터){
+					실행코드;
+					실행코드;
+					~
+					return 반환값;
+				}
+			-호출
+				f(값,값..)
+			   변수명
+
+
+ -->
+ <html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width: 500px;
+		height: 500px;
+		border: 1px;
+		background: skyblue;
+	}
+	p{
+		font-size: 20px;
+		font-weight: bolder;
+		text-align: center;
+		color: black;
+	}
+	a:hover{
+		cursor: pointer;
+		color: black;
+		font-weight: 900;
+	}
+	h1{
+		text-align: center;
+	}
+</style>
+<script>
+	function greet(){
+		document.write("<h1>환영합니다</h1>");
+	}
+</script>
+</head>
+<body>
+	<div>
+		<p><script>greet()</script></p>
+		<hr>
+		<p>저희 홈페이지에 오신것을 <script>greet()</script></p>
+		<a onclick="greet()">☞여기를 눌러주세요</a>
+	</div>
+
+</body>
+</html>

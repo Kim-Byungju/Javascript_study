@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+</head>
+<body>
+<script>
+	
+	let korsum = 0;
+	let mathsum = 0;
+	let engsum = 0;
+	let totsum = 0;
+	let subavg = 0;
+	let totalavg = 0;
+
+	document.write("<table border='1'>");
+	document.write("<tr><td>이름</td><td>국어</td><td>영어</td><td>수학</td></tr>");
+	while(true){
+		let name = prompt("이름을 입력해");
+		let korean = parseInt(prompt("국어성적을 입력해"));
+		let math = parseInt(prompt("수학성적을 입력해"));
+		let english = parseInt(prompt("영어성적을 입력해"));
+		let answer = prompt("계속할거냐?(y/n)");
+
+		
+		korsum += korean;
+		mathsum += math;
+		engsum += english;
+		totsum = korean+math+english;
+
+
+
+		if(answer=='y') {
+			
+		} else if(answer=='n') {		
+			document.write("<tr><td>"+name+"</td><td>"+korean+"</td><td>"+math+"</td><td>"+english+"</td></tr>");
+		}
+
+	}
+	document.write("<tr><td>과목총점</td><td>"+korsum+"</td><td>"+mathsum+"</td><td>"+engsum+"</td></tr>");
+	document.write("<tr><td>전체총점</td><td>"+grade1+"</td><td>"+grade2+"</td><td>"+grade3+"</td></tr>");
+	document.write("</table>");
+</script>
+</body>
+</html>

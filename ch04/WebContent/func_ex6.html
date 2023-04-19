@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		document.write("암호를 입력하라!")
+		document.write("<hr>")
+		
+		flag=true;	
+		password = '1234';
+		let answer = prompt("암호를 입력해주세요");
+		
+		while(flag) {
+			if(answer==password){
+				flag=false;
+				} else if(answer!=password) {
+					document.write("비밀번호 틀렸습니다.");
+					let answer = prompt("다시 암호를 입력해주세요");
+					
+					} 
+			}  
+			document.write("로그인에 성공했습니다.");
+	</script>
+</body>
+</html>

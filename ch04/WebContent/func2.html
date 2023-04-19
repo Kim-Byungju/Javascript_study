@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	document.write(adder(30, 40));  //호이스팅되어서 호출가능
+	document.write("<br>")
+	function adder(a,b){
+		let sum;
+		sum = a+b;
+		return sum;
+	}
+
+	document.write(adder(10, 20));
+</script>
+</head>
+<body>
+	<script>
+		let num1 = parseInt(prompt("첫번쨰수 :"));
+		let num1 = parseInt(prompt("두번쨰수 :"));
+
+		//함수표현식
+		let f = function(a,b){
+			let sum = 0;
+			sum = a+b;
+			return sum;
+		}
+		document.write("<h3>"+f(num1,num2)+"</h3>");
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		text-align: center;
+	}
+	div{
+		width: 500px;
+		height: 100px;
+		padding-top: 3px;
+		background-color: blue;
+		margin:100px auto;
+		color: white;
+		text-align: center;
+	}
+</style>
+<script>
+	/*
+	calculator(n1, n2, operator){
+		만약 operator가 +라면 add(n1,n2)
+		만약 operator가 -라면 minus(n1,n2)
+		나누기는 소수점 두자리
+	}
+	.body에 풀력폼을 만들 호출
+	*/
+
+	let calculator = function(a,b,operator) {
+		let result = 0;
+		switch(operator) {
+			case"+":
+				result = a+b;
+				break;
+			case"-":
+				result = a-b;
+				break;
+			case"*":
+				result = a*b;
+				break;
+			case"/":
+				result = (a/b).toFixed(2);
+				break;
+		}
+		return result;
+	}
+	
+
+</script>
+
+</head>
+<body>
+	<script>
+		let num1 = parseInt(prompt("숫자입력1"));
+		let num2 = parseInt(prompt("숫자입력2"));
+		let operator = prompt("연산자 입력");
+
+		document.write("<div><h3>입력한 결과값 : <br> "+calculator(num1,num2,operator)+"</h3></div>");
+	</script>
+
+
+
+</body>
+</html>

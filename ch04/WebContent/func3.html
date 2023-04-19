@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*  사칙연산후 결과값을 리턴해주는 함수를 구현  - 함수표현식으
+	ab의 입력값을 받는다
+	.add(a,b) ,minus(a,b),multiple(a,b), divide(a,b)
+	calculator(n1, n2, operator){
+		만약 operator가 +라면 add(n1,n2)
+		만약 operator가 -라면 minus(n1,n2)
+		나누기는 소수점 두자리
+	}
+	.body에 풀력폼을 만들 호출
+	*/
+	let add = function(a,b){
+		let result = 0;
+		result = a+b;
+		return result;	
+	}
+
+	let minus = function(a,b){
+		let result = 0;
+		result = a-b;
+		return result;
+	}
+
+	let multiple = function(a,b){
+		let result = 0;
+		result = a*b;
+		return result;
+	}
+
+	let divide = function(a,b){
+		let result = 0;
+		result = a/b;
+		return result.toFixed(2);
+	}
+
+
+</script> 
+</head>
+<body>
+	<script>
+		let num1 = parseInt(prompt("정수입력1"));
+		let num2 = parseInt(prompt("정수입력2"));
+
+		document.write("<h3>덧셈 : "+add(num1,num2)+"</h3>")
+		document.write("<h3>뺼셈 : "+minus(num1,num2)+"</h3>")
+		document.write("<h3>곱셈 : "+multiple(num1,num2)+"</h3>")
+		document.write("<h3>나눗셈 : "+divide(num1,num2)+"</h3>")
+
+
+	</script>
+</body>
+</html>
