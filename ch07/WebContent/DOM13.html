@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let win = null;
+	function showHTML(){
+		if(win==null || win.closed){
+			win = window.open("","outwin","width=300,height=200");
+		}
+		let textArea = document.getElementById("srcText");
+
+		//HTML 텍스트 추가
+		win.document.open();
+			win.document.write("<html><style>body{background:yellow}</style><head></head><body>")
+			win.document.write(textArea.Value+"</body></html>");
+
+		win.document.close();
+
+	}
+</script>
+</head>
+<body>
+	<h3>HTMl문서작성기</h3>
+	<hr>
+	<p>아래에 문서를 작성하고 버튼을 클릭하세요</p>
+	<textarea id="srcText" row="10" cols="50">메오를남겨주세요.
+
+	</textarea>
+	<button onclick="showHTML()">메모등록</button>
+</body>
+</html>

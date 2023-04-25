@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function f() {
+		//querySelector(css선택자)
+		
+		//ul id=a를 가져와서 그 태그의 이름 을 소문자로 출력한다..
+		/* let tag = document.querySelector("ul#a")
+		document.write("<p>"+tag.tagName.toLocaleLowerCase+"</p>") */
+
+		//section의 자손의 모든 li의 id를 모두 출력한다.
+		/* let all = document.querySelectorAll("section li")
+		for(i=0; all.length; i++){
+			document.write("<p>"+all[i].tagName.toLocaleLowerCase);
+		} */
+		//id가 a인 자손 ul들의 태그이름을 모두 출력한다.
+		/* let tags = document.tag.querySelectorAll('ul')
+		for(i=0; i<tags.length; i++){
+			documents.write("<p>"+tags[i].tagName+"</p><br>")
+		} */
+		
+		//id가 c인 객체의 바로 인접한 ul의 id를 출력한다.(바로옆동생만)
+		let tag = document.getElementById('c').nextElementSibling;
+		
+
+		//id가 a에 바로 인접한 h1태그의 id출력
+		//id가 a에 인접한 것들의 id출력
+		//id가 a인 자식들중 ul들의 id 출력
+	}
+</script>
+</head>
+<body onload="f()">
+	<section>
+		<p id="h">
+			<ul id="a">
+				<li id="e">
+					<ul id="b">
+						<li id="i"></li>
+						<li id="j"></li>
+					</ul>
+				</li>
+				<li id="f"></li>
+				<li id="k"></li>
+				<li id="l"></li>
+			</ul>
+			<li id="c"></li>
+			<ul id="d"></ul>
+			<ul id="g"></ul>
+			<h1 id="m"></h1>
+		</p>
+	</section>
+</body>
+</html>

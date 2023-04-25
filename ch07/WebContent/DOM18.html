@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	추천여행지: &nbsp;<input id="t1" type="text">
+	<button type="button" onclick="listplace1()">국내</button>
+	<button type="button" onclick="listplace2()">해외</button>
+
+	<div id="d1">
+		<div>1.국내여행지</div>
+		<div id="d2">2.해외여행지</div>
+	</div>
+	<script>
+		//국내
+		function listplace1(){
+			let tag1 = document.getElementById('t1'); //input
+			let tag2 = document.getElementById('d1'); //부모 div
+			let tag3 = document.getElementById('d2'); //자식div
+
+			//새로운 태그
+			let newTag = document.createElement('div'); // 붙일자식
+
+			//새로운 태그(DOM객체) - innerHTML
+			let textNode = document.creatTextNode(tag1.value); //input에 입력한 값 
+
+			newTag.appendChild(textNode);
+			newTag.style.colr="blue";
+			//-----------------------------------
+
+			tag2.insertBefore(newTag,tag3) //부모.insert.Before(신규태그, 기준위치)
+
+			tag1.value="";//input의 입력창을 깔끔하게 만들어 준디
+
+
+		}
+		//해외
+		function listplace2(){
+
+		}
+	</script>
+</body>
+</html>

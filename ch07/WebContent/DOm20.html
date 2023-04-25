@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<!-- 
+	- setInterval(호출함수, 시간 ) : 주기적인 반복
+		. clearInterval();
+
+	- setTimeout()			   : 단발저인 시간제어
+		.clearTimeout()
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width:250px;
+		height: 250px;
+		background: skyblue;
+		text-align: center;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	#t1{
+		margin:40% auto;
+		background: white;
+	}
+</style>
+<script>
+	let inter=500;   //0.5초
+	function changeTime(){
+
+		let tag = document.getElementById('t1');
+
+		let now = new Date();
+		let h = now.getHours();
+		let m = now.getMinutes();
+		let s = now.getSeconds();
+
+		if(h>12){
+			txt = "PM";
+			h=h-12;
+		} else {
+			txt="AM";
+		}
+		tag.innerHTML=txt+" "+h+":"+m+":"+s+" ";
+	}
+</script>
+</head>
+<body>
+	<h3>디지털시계</h3>
+	<div>
+		<h1 id="t1"></h1>
+	</div>
+	<script>
+		window.setInterval('changeTime()',inter);
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>자바스크립트로 무엇을 할까요?</h3>
+	<button id="b1" onclick="changeOn()">사진1</button>
+	<img id="light" src="./img/달.jpg" style="width: 70px;">
+	<button id="b2" onclick="changeOff()">사진2</button>
+	
+<script>
+	function changeOn(){
+		let tag1 = document.getElementById('light');
+		tag1.src="./img/지구.jpg";
+	}	
+	function changeOff(){
+		let tag1 = document.getElementById('light');
+		tag1.src="./img/태양.jpg";
+	}
+</script>
+
+</body>
+</html>

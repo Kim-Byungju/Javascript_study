@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function listplace(){
+		
+		
+
+		let a = document.getElementById('t2')
+
+		let li = document.createElement("li");
+		li.setAttribute('id','addValue');
+
+		
+
+		
+		a.appendChild(li);
+
+
+	}
+</script>
+</head>
+<body>
+	여행하고싶은지역<input id = "t1" type="text">
+	<button type="button" onclick="listplace()">추 가</button>
+	<ul id="t2"></ul>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SSIBAL</title>
+	</head>
+	<body>
+		<h2>
+			<img src="" width="50" height="100">
+			web programming!
+		</h2>
+		<hr>
+		<ul id="target">
+			<li>HTML5</li>
+			<li>자바스크립트</li>
+		</ul>
+		<br>
+		<form>
+			<button type="button" onclick="f()">방문기록</button>
+			<input type="text" size="50">
+		</form>
+	<!-- 
+
+		DOM트리를 그린다.
+		id target의 첫번째 자식은? 0
+		id target의 부모는? 0
+		id target의 왼쪽형제 0
+		id target의 오른쪽형제 0
+		id target의 마지막자식의 innerHTML은? 0?
+		img태그의 속성 width값은? 0
+		이문서의 제목은? 0
+
+		form태그의 첫번째 자식의 이름은>? getElementsTagName('form')활용
+		form태그의 마지막 자식의 이름은>?
+
+	-->	
+	<script>
+		function f() {
+			//id target의 태그이름
+			let a1 = document.getElementById('target');
+			document.write("태그이름 :"+a1.tagName+"<br>");
+			
+			//id target의 첫쨰자식
+			let a2 = a1.firstElementChild;
+			document.write("id target의 첫번째 자식:"+a2.tagName+"<br>");
+			
+			//id target의 부모
+			let a3 = a1.parentElement;
+			document.write("id target의 부모:"+a3.tagName+"<br>");
+			
+			//id target의 왼쪽(이전)형제
+			let a4= a1.previousElementSibling;
+			document.write("id target의 왼쪽형제:"+a4.tagName+"<br>");
+			
+			//id target의 오른쪽(다음)형제
+			let a5= a1.nextElementSibling;
+			document.write("id target의 오른쪽 형제:"+a5.tagName+"<br>");
+
+			// id target의 마지막 자식 innrerHTML은?
+			let a6 = a1.lastElementChild.innerHTML;
+			document.write("id target의 마지막 자식 innerHTML : "+a6+"<br>");
+
+			// //img태그속성 width 값은?
+			let images = document.getElementsByTagName('img')[0];
+			// let abc = images[0].getAttribute('width')
+			document.write("img 태그속성 width의 값은? : "+images.getAttribute('width')+"<br>");
+
+			//이문서의 제목은?
+
+			let tit = document.title.innerHTML;
+			document.write("이문서의 제목은 : "+tit+"<br>")
+
+			//form태그의 첫번째 자식의 이름은>?
+			// let forms = document.getElementsByTagName('forms')
+			// let formschild = forms[0].firstElementChild;
+			// document.write("form 태그의 첫번째 자식이름 : "+formschild.tagName+"<br>")
+			
+
+
+
+
+			
+		}
+	</script>
+	</body>
+</html>

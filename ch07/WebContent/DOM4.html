@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	span{
+		font-weight: 900;
+	}
+</style>
+</head>
+<body>
+	<p id="first">자바스크립트가 제일 재밌어요</p>
+	<p id="second">안녕하세요<span id="third" style="color: pink;">자바스크립트</span></p>
+
+	<script>
+		//기본
+		let p1 = document.getElementById('first');
+		p1.style.color='red';
+		p1.style.backgroundColor='yellow';
+
+		document.getElementById('second').style.color='blue';
+
+		let p2 = document.getElementById('second');
+		p2.style.cssText = "background-color:green";
+
+		p2.style.display="block";
+		p2.style.width='15em';
+		p2.style.height="50px";
+		p2.style.border='3px dotted magenta';
+		p2.style.margin = '2opx';
+		
+		//읽기
+		let span = document.getElementById("third");
+		let color = span.style.color;
+		let fontWeight = span.style.fontWeight;
+		document.write("span태그의 칼라:"+color+"<br>");
+		document.write("span태그의 폰트웨이트 : "+fontWeight+"<br>")
+
+		let style = window.getComputedStyle(span);
+		let value1 = style.getPropertyValue('color');
+		let value2 = style.getPropertyValue('font-weight');
+		document.write("color : "+value1+"<br>");
+		document.write("font-weight: "+value2+"<br>")
+
+		
+	</script>
+
+</body>
+</html>

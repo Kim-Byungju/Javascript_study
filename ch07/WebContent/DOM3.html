@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<!-- 
+	1. DOM객체선택
+		. obj = document.getElementById('id');
+		. obj = document.getElementsByTagName('tag');
+		. obj = document.getElementsByClassName('cl');
+		. obj = document.getElementsByName('name');
+		. obj = document.querySelector('ul>li:last~');
+		. obj = document.querySelectorAll(); - 컬렉션	
+	
+	2. 스타일 읽기 
+		. HTML에 설정 : obj.style.backgroundColor;              //하이픈(-)은 쓰면안됨.
+		. 셀렉터로 설정된 스타일:
+			window.getComputedStyle(셀렉터);
+			value = style.getPropertyValue('color');
+	3. 스타일설정
+		. obj.style.backgroundColor='green';
+		. obj.style.cssText = "background-color:green"
+		. document.body.backgroundColor='green'
+	
+	4. DOM객체생성
+		. newTag = document.creatElement('p');
+		. newTag.setAttribute(속성, 값)
+		. newTag.innerHTML = "<p>오늘은 금요일 입니다</p>"
+	
+	5. DOM객체추가
+		. 부모.appendChild(newTag) 
+		. 부모.insertBefore(기준자식)
+	
+	6. DOM객체제거
+		. 부모.removeChild(호적파버리고싶은 자식)
+		. 부모.replaceChild(바꾸고 싶은 자식)
+
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>DOM객체 p의 속성,스타일</h3>
+	<hr>
+	<p id="first"
+		style="color: green;background-color: yellow;" onclick="this.style.color='tead'">
+		오늘은 <span>금요일입니다.</span>
+	</p>
+<!-- 
+	.p의 태그이름
+	.p의 innerHTML
+	.p의 글자색	
+	.p의 onclick 내용
+	.p의 자식수?
+	.p의 너비(offsetWidth)
+	.p의 높이(offsetHeight)	
+
+ -->	
+ <script>
+	 	//p태그 이름
+	   let name =document.getElementById('first');
+	   document.write("p태그이름 : "+name.tagName+"<br>");
+	   //p의 innerHTML
+	   let inner = name.innerHTML;
+	   document.write("p의 innerHTML : "+inner+"<br>");
+	   //p의 글자색
+	   let color = name.style.getPropertyValue('color');
+	   document.write("p의 글자색 : "+color+"<br>");
+	   //p의 onclick내용
+	   let click = name.onclick;
+	   document.write("p의 onclick : "+click+"<br>");
+	   //p의 자식수
+	   let ca = name.childElementCount;
+	   document.write("p의 자식수 : "+ca+"<br>");
+
+	   //p의 너비(offsetWidth)
+	   let 너비 = name.offsetWidth;
+	   document.write("p의 너비 : "+너비+"<br>");
+	   
+	   //p의 너비(offheight)
+	   let heig = name.offsetHeight;
+	   document.write("p의 너비 : "+heig+"<br>");
+	   
+
+
+ </script>
+</body>
+</html>

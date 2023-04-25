@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	p {
+		background-color: green;
+		display: block;
+		width: 500px;
+		height: 800px;
+
+	}
+	</style>
+<script>
+	let i=0;
+	function addDOM(){
+		i++;
+		let newDiv = document.createElement('div');
+		newDiv.innerHTML = "새로생성된 DIV입니다.";
+		newDiv.setAttribute("id", "myDIV");
+		newDiv.style.backgroundColor = "yellow"
+
+		let p = document.getElementById('p');
+		p.appendChild(newDiv);
+	}
+	function remove(){
+		let myDiv = document.getElementById('myDIV');
+		let parent = myDiv.parentElement;
+
+		parent.removeChild(myDiv);
+
+		
+	}
+</script>
+</head>
+<body>
+	<p id="p">문서의 동적구성</p>
+	<button type="button" onclick="addDOM()">추가</button>
+	<button type="button" onclick="remove()">삭제</button>
+	
+</body>
+</html>

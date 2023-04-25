@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let checked_items = [];
+	function f(){
+		let tags = document.getElementsByName("chk_interest");
+		/* tags[1].setAttribute("checked","checked");
+		tags[1].setAttribute("value","enjoy"); */
+		for(i=0; i<tags.length; i++) {
+			if(tags[i].checked){
+				checked_items.push(tags[i]);
+			}
+		}
+		select();
+	}
+	function select() {
+		let result = document.getElementById('selected');
+		let items = "<h3>당신이 선택한 관심품목은 <span style = 'color:blue'>";
+
+			for(i=0; i<checked_items.length; i++){
+				if(i==checked_items.length-1){
+					items += checked_items[i].getAttribute('value');
+				} else {
+					items += checked_items[i].getAttribute('value')+",";
+				}
+			}
+			result.innerHTML = items+"</span>입니다.</h3>";
+
+	}
+	function setImg(obj){
+		obj.setAttribute("src","./img/달.jpg");
+		obj.setAttribute("width","200");
+		obj.setAttribute("height","200");
+	}
+</script>
+</head>
+<body>
+	<h3>관심품목을 선택합니다.</h3>
+	<label>
+		<input type="checkbox" name="chk_interest" value="it">
+		IT/컴퓨터<br>
+	</label>
+	
+		<input type="checkbox" name="chk_interest" value="entertainment">
+ <label for="t">엔터테인먼트</label><br>
+
+ <label>
+	 <input type="checkbox" name="chk_interest" value="shopping">쇼핑<br>
+ </label>
+
+ <label>
+	 <input type="checkbox" name="chk_interest" value="sports">운동<br>
+ </label>
+
+ <label>
+	 <input type="checkbox" name="chk_interest" value="book">도서/책<br>
+ </label>
+
+ <h3 onclick="f()" style="cursor: pointer; text-decoration: underline;">선택완료</h3>
+ <h3 id="selected" onclick="select()"></h3>
+ <img id="img" src="./img/지구.jpg" width="200" height="200" onclick="setImg(this)">
+</body>
+</html>

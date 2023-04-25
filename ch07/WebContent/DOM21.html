@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#rangeProgress{
+		width: 100%;
+		height: 30%;
+		position: relative;
+		background: darkgray;
+
+	}
+	#bar{
+		background: red;
+		width: 0px; height: 30px; position: absolute;
+	}
+</style>
+</head>
+<body>	
+	진행상태 : <span id="demo">0%</span>
+	<div id="rangeProgress"><div id="bar"></div></div>
+	<button type="button" onclick="move()">진행</button>
+
+	<script>
+		function move(){
+			let progressBar = document.getElementById('bar');
+			let demo = document.getElementById('demo');
+
+			let width=0;
+			let id = setInterval(function(){
+				if(width==100) {
+					clearInterval(id); //중지
+				} else{
+					width++;
+					progressBar.style.width = width+'%';
+					demo.innerHTML=width+'%';
+				}
+			},10);
+		}
+	</script>
+</body>
+</html>

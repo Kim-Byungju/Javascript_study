@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="p1">
+		<img src="./img/지구.jpg" width="60" height="60">
+		<img src="./img/달.jpg" width="60" height="60" id="w1">
+		<img src="./img/태양.jpg" width="60" height="60">
+		<img src="./img/지구.jpg" width="60" height="60" id="w2">
+		<img src="./img/달.jpg" width="60" height="60">
+		<img src="./img/태양.jpg" width="60" height="60">
+		<img src="./img/태양.jpg" width="60" height="60">
+
+	</div>
+	<hr>
+	<button type = "text" onclick="del()">두번쨰 이미지삯제</button>
+	<button type = "text" onclick="replace()">네번쨰 이미지 바꿈</button>
+
+	<script>
+		function del() {
+			let deletedTag = document.getElementById('w1');
+			deletedTag.remove();
+		}
+		function replace() {
+			let newTag = document.createElement('img');
+			newTag = setAttribute('src','./img/지구.jpg');
+			newTag = setAttribute('width','60px');
+			newTag = setAttribute('height','60px');
+			
+			let oldTag = document.getElementById('w2');
+			let parent = oldTag.parentElement;
+			parent.replaceChild(newTag,oldTag);  //부의 자식들중에 올드를 new
+			
+		}
+	</script>
+</body>
+</html>

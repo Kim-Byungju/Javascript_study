@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function changeContent(){
+		let tag = document.getElementById('p');
+		tag.innerHTML = "이제부터 자바스크립트 고급부분을 학습합니다.";
+
+		let img = document.getElementById('img');
+		let text = "<img src='./img/티벳여우1.jpg' width=300; height=300>";
+		text+= "<p>즐겁게 열심히 합시다.</p>"
+	}
+</script>
+</head>
+<body>
+	<h3>자바스크립트 동적변화</h3>
+	<p id="p">지금까지 자바스크립트의 기본학습을 하였습니다.<img id="img"></p>
+	
+	<button type="button" onclick="changeContent()">NEXT</button>
+	
+
+</body>
+</html>

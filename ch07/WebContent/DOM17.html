@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button type="button" onclick="insertImg1()">이미지1</button>
+	<button type="button" onclick="insertImg2()">이미지2</button>
+	<button type="button" onclick="insertImg3()">이미지3</button>
+	<br><br>
+	<div id="d"></div>
+	<script>
+		function insertImg1(){
+			let parent = document.getElementById("d");
+
+			let newTag = document.createElement('img');
+			newTag.setAttribute('src','./img/지구.jpg');
+			newTag.setAttribute('width','100px');
+			newTag.setAttribute('height','80px');
+
+			parent.appendChild(newTag);
+		}
+		function insertImg2(){
+			let parent = document.getElementById("d");
+
+			let newTag = document.createElement('img');
+			newTag.setAttribute('src','./img/달.jpg');
+			newTag.setAttribute('width','100px');
+			newTag.setAttribute('height','80px');
+
+			parent.appendChild(newTag);
+
+		}
+		function insertImg3(){
+			let parent = document.getElementById("d");
+
+			let newTag = document.createElement('img');
+			newTag.setAttribute('src','./img/태양.jpg');
+			newTag.setAttribute('width','100px');
+			newTag.setAttribute('height','80px');
+
+			parent.appendChild(newTag);
+		}
+	</script>
+</body>
+</html>
