@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let sum=0;
+	function f(obj){
+
+		if(obj.checked){
+			sum+=parseInt(obj.value);
+		} else{
+			sum -= parseInt(obj.value);
+		}
+		document.getElementById('sumtext').value = sum;
+
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="checkbox" name="hat" value="10000" onclick="f(this)">모자 1만원
+		<input type="checkbox" name="shoes" value="30000" onclick="f(this)">구두 3만원
+		<input type="checkbox" name="bag" value="100000" onclick="f(this)">명품가방 10만원
+		<br>
+		지불하실 금액<input type="text" id="sumtext" value="0">
+	</form>
+</body>
+</html>

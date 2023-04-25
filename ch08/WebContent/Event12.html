@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function checkFilled(obj){
+		if(obj.value == ""){
+			let w = window.open('','mywin','width=500px, height=150px,'+'left=500px, top=300px,backgroundColor=pink');
+			w.document.open();
+			w.document.write(`<html><head></head>
+							<body style='text-align:center; width:300px; height:150px; 
+							margin:0 auto; background-Color:pink'><h2>이름을 적어주세요</h2>
+							</body></html>`);
+			w.document.close();
+			obj.focus();
+		}
+	}
+
+</script>
+</head>
+<body onload="document.getElementById('name').focus()">
+	<p>이름을 입력하지 않고 다른창으로 이동할수 없습니다. </p>
+	<form>
+		이름 : <input type="text" id="name" onblur="checkFilled(this)"><br>
+		학번 : <input type="text">
+	</form>
+</body>
+</html>

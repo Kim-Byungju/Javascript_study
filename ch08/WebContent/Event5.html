@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- 
+	Event객체
+		. 이벤트 객체 : 이벤트에 대한 정보를 담는 객체이다. 
+		. 이벤트가 발생하면 브라우저는 이벤트 객체를 생성해서 그속에 이벤트에 대한 정보를 담는다.
+		. 이벤트가 발생한 target을 찾아서 그속에서 구현해놓은 리스너에게 전달한다.
+	
+	이벤트 객체를 전달받는 3가지 방법
+		. 매개변수를 통해 객체를 전달받는 방법
+		 - 리스너함수 : function(e) {
+						//만약 함수안에서 이벤트 객체의 정보를 활용하려 한다면
+						  매개변수 e를 선언해준다.
+						  e.type();
+					 }
+		 - 호출 	   : obj.onclick = f; 
+
+		 .HTML태그안의 리스너인 경우	
+					 - 이벤트라는 이으로 전달한다.(매개변수 event적시)
+					 	<button onclick='f(event)'>
+
+	Event객체의 속성
+		. type : 이벤트가 발생한 종류를 나타내는 문자열 반환	
+		. target : 이벤트를 발생시킨 객체
+		. currentTarget :현재 이벤트 리스너를 실행하고있는 DOM객체
+		. defaultPrevented  : 디폴트행동을 취소되었는지를 true/false로 반환
+		. preventseDefault() : 이벤트의 티폴트 행동을 취소시키는 메소드
+		. - a, submit, reset, check
+
+	 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+</script>
+</head>
+<body onload="">
+	<h3>이벤트 객체에대한</h3>
+	<img id="img" src="./img/달.jpg"><br>
+	<button onclick="f(event)">버튼을 클릭해보세요</button>
+	<p id="p">마루스를 올려보세요</p>
+
+	<script>
+		function f(e){
+			alert(e.type);
+		}
+		function f2(){
+			let p = document.getElementById('p');
+			p.onmousemove = f;
+
+			let img = document.getElementById('img');
+			img.onmouseout = function (e){
+				alert(e.type);
+			}
+		}
+
+	</script>
+
+</body>
+</html>

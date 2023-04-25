@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#p1,#p2{
+		display: inline-block;
+		margin: 10px;
+	}
+
+</style>
+<script>
+	let p2;
+	function init(){
+		let p1 = document.getElementById('p1');
+		p2 = document.getElementById('p2');
+		let btn = document.getElementById('remove');
+
+		
+		p1.onmouseover = function(){
+			//p1의 배경색을 orchid로
+			style.backgroundColor='orchid';
+
+		}
+		p1.onmouseout = function(){
+			//p1의 배경색을 orchid로
+			p1.style.backgroundColor='white';
+		}
+		p2.addEventListener('click',bigsize);
+		btn.onclick = function(){
+			//p2.글자크기는 1em
+			p2.style.fontSize='1em';
+			//p2.배경색은 yellow
+			p2.style.backgroundColor='yellow';
+			//p2.bigsize이벤트리스너 제거
+		}
+	}
+	function bigsize(){
+		p2.style.fontSize="3em";
+	}
+</script>
+</head>
+<body onload="inint()">
+	<h3>익명함수로 이벤트리스너 작성</h3>
+	<hr>
+	<p id="p1">마우스를 올리면 orange색으로 변한다.</p>
+	<p id="p2">마우스를 클릭하면 글자크기가 커집니다.</p>
+	<hr>
+	<button id="remove" type="button">이벤트 제거</button>
+</body>
+</html>

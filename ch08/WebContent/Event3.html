@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	let p;  //전역변수 선언
+	function init(){
+		p = document.getElementById('p');
+
+		//이벤트리스너 등록
+		p.addEventListener('mouseover',over);
+		p.addEventListener('mouseover',size);
+		p.addEventListener('mouseover',fontstyle);
+		p.addEventListener('mouseout',out);
+	}
+
+	function remove(){
+		p.removeEventListener('mouseover',over);
+	}
+	function size(){
+		p.style.fontSize="20px";
+	}
+	function over(){
+		p.style.backgroundColor='orchid';
+	}
+	function out(){
+		p.style.backgroundColor='white';
+	}
+	function fontstyle(){
+		p.style.fontstyle='italic';
+	}
+</script>
+</head>
+<body onload="init()">
+	<h3>addEventListener()를 활용한 등록</h3>
+	<button id="btn" type="button" onclick="remove()">이벤트제거</button>
+	<hr>
+	<p id="p">마우스를 올리면 배경색을 orchid색으로 변경합니다.</p>
+</body>
+</html>

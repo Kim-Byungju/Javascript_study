@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function findChecked() {
+		let found = null;
+		let city = document.getElementsByName('city');
+		for(i=0; i<city.length; i++){
+			if(city[i].checked == true){
+				found = city[i];
+			}
+		}
+		if(found != null){
+			alert(found.value+"가 선택되었습니다.")
+		} else {
+			alert(" 선택한것이 없습니다.");
+		}
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="radio" name="city" value="seoul">서울
+		<input type="radio" name="city" value="pusan">부산
+		<input type="radio" name="city" value="pyeongyang">평양
+		<br>
+		<input type="button" value="find" onclick="findChecked()">
+	</form>
+</body>
+</html>

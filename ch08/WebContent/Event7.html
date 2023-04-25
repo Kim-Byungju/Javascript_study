@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- 
+	이벤트의 흐름
+
+		. 브라우저에서 이벤트가 발생하면 이벤트에 대한 객체를 DOM트리를 따라 
+			target을 찾으러 순회한다. 이때 이벤트 객체를 target에 등록된
+			이벤트 리스너에게 전달하고 리스너를 실행한다.
+			다시반대 방향으로 DOM트리를 따라서 window까지 올라온다.
+			window에 도착하면 이벤트 객체가 소멸된다.
+
+		. 경로상에 있는 모든 DOM객체들에게 순서대로 이벤트 객체가 전달된다.
+		. target까지 내려가는 단계를 캡쳐단계, window로 올라오는 단계를 버블단계라 한다.
+		. 모든 이벤트에 대해 캡쳐단계는 항상 진행되지만, 버블단계는 생략되기도 한다.
+			>focus, blur 버블단계가 없다.
+		
+		. 구현방법
+			- addEventListener('이벤트', 리스너함수, true/false)
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>이것은 <span>문장이다.</span></p>
+	<form>
+		<input type="text" name="s">
+		<input type="button" value="테스트" id="button">
+		<hr>
+	</form>
+	<div id="div" style="color: green;"></div>
+	<script>
+		let div = document.getElementById('div');
+		let button = document.getElementById('button');
+
+		document.body.addEventListener('click',capture,true);
+		button.addEventListener('click',bubble,false);
+		document.body.addEventListener('click',bubble,false);
+
+		function capture(e){
+			let obj = e.currentTarget;
+			let tagName = obj.tagName;
+			div.innerHTML += `<br>capture단계 : ${tagName}태그${e.type}이벤트`;
+		}
+		function bubble(e){
+			let obj = e.currentTarget;
+			let tagName = obj.tagName;
+			div.innerHTML += `<br>bubble단계 : ${tagName}태그${e.type}이벤트`;
+		}
+	</script>
+</body>
+</html>

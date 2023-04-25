@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- 
+	select
+		. 콤보박스
+		. 선택된 option은 selectedIndex로 알아낸다.
+		. onchange리스너와 연결하여 사용한다.
+		. length : 옵션개수
+		. selectedIndex: 선택된 option의 인덱스
+		. size
+	
+	option
+		. selected : checked와 동일한 역활
+		. text : 옵션 문자열,
+		. value : value 속성 문자열
+	
+	Image
+		. 이미지출력 : 1)자바스크립트에서  new Image()객체를 생성해서 할수있다.
+					  img.src=""
+					  . new Image()는 이미지를 미리 로드시켜놓은 역할을 한다.
+					  . img.src=image;
+					2) <img src="">  
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function changeImage(){
+		let sel = document.getElementById('sel');
+		let img = document.getElementById('myImg');
+
+		img.onload=function(){
+			let myImgSize = document.getElementById('myImgSize');
+			myImgSize.innerHTML = img.width+"x"+img.height;
+		}
+		let index = sel.selectedIndex;
+		img.src = sel.options[index].value;
+	}
+</script>
+</head>
+<body>
+	<form name="frm1">
+		<select id="sel" onchange="changeImage()">
+			<option value="./img/달.jpg">달</option>
+			<option value="./img/지구.jpg">지구</option>
+			<option value="./img/태양.jpg">태양</option>
+		</select>
+		<span id="myImgSize">이미지 크기</span>
+	</form>
+	<p><img id="myImg" src="./img/달.jpg"></p>
+</body>
+</html>
