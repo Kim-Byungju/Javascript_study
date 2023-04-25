@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	html{
+		cursor: none;
+	}
+	.cursor{
+		background-image: url('./img/infinite-removebg-preview.png'); width: 30px; height: 50px;
+		background-size: 100%;
+	
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 999;
+	}
+</style>
+<script>
+	
+	window.onload = function() {
+		function mouseFunc(event){
+			let cursor = document.querySelector('.cursor');
+			cursor.style.transform = `translate(${event.clientX}px,${event.clientY}px)`;
+		}
+		window.addEventListener("mousemove",mouseFunc,false);
+	};
+	
+</script>
+
+</head>
+<body>
+	<h3>이미지 커서 만들기</h3>
+	<hr>
+	마우스를 움직이면 이미지로만든 커서가 마우스를 따라다닙니다.
+	<div class="cursor"></div>
+</body>
+</html>

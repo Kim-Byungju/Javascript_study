@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function load(){
+		let select = document.getElementById('site');
+		window.location = select[select.selectedIndex].value;
+	}
+</script>
+</head>
+<body>
+	<h3>웹사이트접속(페이지이동)</h3>
+	<hr>
+	<select id="site">
+		<option value="http://www.naver.com">네이버</option>
+		<option value="http://www.google.com">구글</option>
+		<option value="win5.html">내페이지</option>
+	</select>
+	<p></p>
+	<button onclick="load()">사이트접속</button>
+</body>
+</html>

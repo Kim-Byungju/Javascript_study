@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#span{
+		background: yellow;
+	}
+</style>
+</head>
+<body>
+	<h3>텍스트가 자동으로 회전합니다.</h3>
+	<hr>
+	<div>
+		<span id="span">오늘은 화요일입니다. 맛있는 점심을 먹습니다.</span>
+	</div>
+	<script>
+		let span = document.getElementById('span');
+		let timerID = setInterval('doRotate()',200);
+		function doRotate(){
+			//????? - String객체의 메소드를 활용한 구현
+			//      + innerHTML만들어준다.
+		}
+
+		span.onclick=function(){
+			clearInterval(timerID); //중지
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 이미지위에서 마우스휠을 위로 굴리면 3초뒤에 내가만든 페이지가 500*500사이즈에 출력된다. 
+		그런데 마우스가 내려오면 3초 타이머가 중지된다.
+	clear Timeout(); 하면된다. ,, 사진 참고해ㅅ
+	-->
+
+	<img id="img" src="./img/지구.jpg" width="300" height="300" onmouseover="startTimer(5000)"
+																onmouseout="">
+
+	
+<script>
+	let timerID=null;
+	function startTimer(time){
+		timerID = setTimeout('openwin()',time);
+		document.getElementById('img').title="타이머가 작동중......";
+	}
+	function openWin(){
+		let newWind = wimdow.open('win2.html','mywin','width=500,height=500')
+	}
+	
+
+</script>
+ </body>
+</html>
