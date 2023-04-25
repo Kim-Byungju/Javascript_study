@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//객체는 리터럴 표기법으로 한다.
+	//배열을 준비한다.
+	let member_arr = [];
+	// 회원등록을 하시겠습니까? false 까지 반복한다.
+	while((confirm("회원을 등록하시겠습니까?"))==true){
+		// 이름, 나이, 주소를 받는다.
+		let member_name = prompt("이름");
+		let member_age = prompt("나이");
+	}
+	
+	// 객체생성해서
+	let member = {
+		name : member_name,
+		age : member_age
+	}
+ //배열에 저장.
+	member_arr.push(mamber);
+
+
+
+</script>
+</head>
+<body>
+
+	<!-- 특정한 포맷에다가 
+		- 특정 회원정보를 출력한다.-->
+
+
+		<!-- - 전체회원정보를  출력한다.  -->
+		<script>
+			for(i=0; i<member_arr.length; i++){
+				document.write("<h3>회원"+(i+1)+":"+member_arr[i].name+"나이 :"+member_arr[i].age+"</h3>");
+			}
+		</script>
+	
+</body>
+</html>

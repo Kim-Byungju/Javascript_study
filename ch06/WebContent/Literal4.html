@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	const superHeroes = {
+		"squadName" : "Super hero squad",
+		"homeTown" : "Gotham City",
+		"formed" : 2016,
+		"secretBase" : "Super tower",
+		"active" : true,
+		"introduce" : function() {
+			document.write("<h3>저를 소개합니다. 제이름은"+this.squadName+"입니다.</h3>");
+		}, 
+		"members" : [
+			{
+				"name":"Molecule Man",
+				"age" : 29,
+				"secretIdentity": "Dan Jukes",
+				"powers":["Radiation resistance","Turning tiny",
+						  "Radiation blast"]
+			},
+			{	"name":"Madame Uppercut",
+			 	"age" : 39,
+			 	"secretIdentity": "Jane Wilson",
+				"powers":["Million tonne punch", "Damage resistance",
+				"Superhuman feflexes"]
+		
+			},
+			{
+				"name":"Eternal Flame",
+			 	"age" : 10000,
+			 	"secretIdentity": "Unknown",
+				"powers":["Immortality", "Heat Immunity",
+				"Inferno", "Teleportation", "Interedimensional travel"]
+		
+			}
+		]
+	}
+
+	if(superHeroes.active == true){
+		document.write("<h3>squadName : "+superHeroes.squadName+"</h3>");
+		document.write("<h3>homeTown : "+superHeroes.homeTown+"</h3>");
+		document.write("<h3>formed : "+superHeroes.formed+"</h3>");
+		document.write("<h3>secretBase : "+superHeroes.secretBase+"</h3>");
+
+		superHeroes.introduce();
+		document.write("**************");
+		//superHeroes member수를 출력하시오
+		
+		//member 첫번쨰멤버의 power의 수를 출력하시오.
+		//memeber 첫번쨰 멤버의 두번째 power 종류를 출력하시오
+		//모든 member의 power의 종류들을 모두 출력하시오
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

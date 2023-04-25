@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	const person = {
+		firstName : "홍",
+		lasrtName : "길동",
+		age : 30,
+		tel:"010-1111-2222",
+		address:"서울마포구",
+		취미:['축구','농구','배구']
+	}
+	function introduce() {
+		person['lastName'] = '기훈';
+		person['firstName'] = '김';
+		person['취미'] = ['족구','야구','개스키','게임'];
+
+		document.write("<h3>"+person.firstName+person.lastName+"님이 입자ㅇ하셨ㅅ브니다.</h3>");
+		document.write("<h3>취미는....");
+		for(i=0; i<person.취미.length; i++){
+			if(i != person.취미.length-1) {
+				document.write("<span style='color:blue'>"+person.취미[i]+",</span>");
+			} else {
+				document.write("<span style='color:red'>"+person.취미[i]+"</span>");
+			}
+
+		}
+		document.write("입니다.</h3>");
+	}
+	introduce();
+</script>
+</head>
+<body>
+
+</body>
+</html>

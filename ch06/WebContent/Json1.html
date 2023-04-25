@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Student(name,dept,grade) {
+		this.name = name;
+		this.dept = dept;
+		this.grade = grade;
+		this.phone = "010-1111-2222";
+		this.study = function(){
+			document.write("<h3>열심히 공부합니다.</h3>");
+		}
+	}
+	let person = {
+		name :"홍길동",
+		age : 39,
+		hobby:['취미','야구','배구']
+	}
+</script>
+</head>
+<body>
+<script>
+	let s1 = new Student("홍길동", '컴퓨터학과',1);
+	let s2 = new Student("왕건", '컴퓨터학과',2);
+
+	//클라이언트 서버간 통신
+	// .자바스크립트 객체(Object)>> JSON.stringify(객체)>>>JSON(String)
+	// .JSON>>객체로 활용할떄... >> JSON.parse(JSON데이터) >>활용
+	document.write(typeof(s1)+"<br>");
+	let s3 = JSON.stringify(s1);     //제이손데이터 스트링화
+	document.write(typeof(s3)+"<br>");
+	document.write(s3);  //JSON데이터 출력
+
+	let s4 = JSON.parse(s3);          //제이손 데이터 객체화(Object)
+	document.write("<br>");
+	document.write(typeof(s4)+"<br>");
+	
+	document.write(s4.name);
+	document.write(s4.age);
+
+	document.write("<hr>");
+	//person으로 실행
+	document.write(typeof(person)+"<br>");
+	let s5 = JSON.stringify(person); 
+	document.write(person+"<br>");
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- 
+	자바스크립트의 객체
+		; 자바스크립트에서 Class도 추가 되었다.
+
+		. 코어객체 :내장객체 -  String, Arrat, Math...
+				사용자 객체  - new Object(), 리터럴 방식, 프로토타입(생성자)로 생성
+
+		. HTML DOM(Document Object Model)객체
+		. BOM (Browser Object Model)객체
+
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	class person{
+		constructor(a,b,c){
+			this.a =a;
+			this.b =b;
+			this.c =c;
+		}
+		getA(){
+			return this.a;
+		}
+		getB(){
+			return this.b;
+		}
+		getC() {
+			return this.c;
+		}
+	}
+
+	let p = new person("홍길동",30,"한양");
+	document.write(p.getA());
+	document.write(p.getB());
+	document.write(p.getC());
+</script>
+</head>
+<body>
+
+</body>
+</html>
