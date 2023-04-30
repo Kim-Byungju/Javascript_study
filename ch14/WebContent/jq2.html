@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./script/jquery-3.6.4.js"></script>
+<style>
+	li{
+		list-style: none;
+	}
+	a{
+		background: 0 50% no-repeat;
+		padding-left: 20px;
+	}
+	a.presentation{
+		background-image: url('./img/5.png');
+	}
+	a.video{
+		background-image: url('./img/3.png');
+	}
+	a.pdf{
+		background-image: url('./img/5.png');
+	}
+	a.image{
+		background-image: url('./img/3.png');
+	}
+
+</style>
+<script>
+	$(()=>{
+		$("a[href='naver'").addClass('presentation');
+		$("a[href='video.mp4'").addClass('video');
+		$("a[href='notes.pdf'").addClass('pdf');
+		$("a[href='icon.gif'").addClass('image');
+	});
+</script>
+</head>
+<body>
+	<h1>아이콘 추가해서 링크구현하기</h1>
+	<p>아래 리스트에 링크가 되게 만들고 아이콘을 추가해본다</p>
+	<br><br>
+	<ul>
+		<li><a href="presentation.html">슬라이드 보여주기</a></li>
+		<li><a href="video.mp4">비디오 보여주기</a></li>
+		<li><a href="notes.pdf">Note 보여주기</a></li>
+		<li><a href="icon.gif">Icon sprite</a></li>		
+	</ul>
+</body>
+</html>
