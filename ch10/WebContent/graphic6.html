@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+	-캔버스 이미지 그리기
+		. let img = new Image():
+		. let src = 'test.png' //이미지를 로딩해 놓는다.
+
+		. 그리기
+			1)drawImage(img,x,y,w,h)-x,y위치에다가 w,h크기로 img그려라
+			2) drawImage(img, sx, sy, sw, sh, dx, dy, sw, dh)
+
+
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<canvas
+	id="myCanvas"
+	width="500"
+	height="500"
+	style="background: aliceblue;
+	border: 20px solid #696969;">
+
+	</canvas>
+	<script>
+		let canvas = document.getElementById('myCanvas');
+		let context = getContext('2d');
+
+		let img = new Image();
+		img.onload = function(){
+		 	context.drawImage(img, 20, 20, 100, 200);
+		}
+		img.src='./img/지구.jpg';
+
+		let img2= new Image();
+		img2.onload = function(){
+			context.drawImage(img2,400,300,400,400,50,350,400,100);
+		}
+		img2.src='./img/지구.jpg';
+
+
+
+	</script>
+</body>
+</html>

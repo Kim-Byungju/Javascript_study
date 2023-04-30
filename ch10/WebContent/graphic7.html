@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지를 딱맞게 넣기 </title>
+</head>
+<body>
+	<canvas
+	id="myCanvas"
+	width="500"
+	height="500"
+	style="background: aliceblue;
+	border: 20px solid #669966;">
+	지원되지않습니다.
+	</canvas>
+	<script>
+		let canvas = document.getElementById('myCanvas');
+		let context =  canvas.getContext('2d');
+
+		let img = new Image();
+		img.onload = function(){
+			context.drawImage(img,0,0,canvas.width, canvas.height);
+		}
+		img.src="./img/달.jpg"
+	</script>
+</body>
+</html>

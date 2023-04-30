@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<canvas
+	id="myCanvas"
+	width="700"
+	height="500"
+	style="background: black;
+	border-radius: 20px;">
+	</canvas>
+	<script>
+		let canvas = document.getElementById('myCanvas');
+		let context = canvas.getContext('2d');
+
+		context.strokeStyle='red';
+		context.fillStyle='yellow';
+		context.lineWidth=30;
+
+		context.beginPath();
+		context.moveTo(120, 80); //시작점
+		context.lineTo(180, 300); //
+		context.lineTo(400, 400);
+		context.lineTo(100, 250);
+		context.closePath();
+
+		context.stroke();
+		context.fill();
+
+		context.fillText('수요일',60,450);
+		/* context.strokeStyle="white"; */
+		context.font="40px 나눔고딕체";
+
+		context.fillText("자바스크립트",250,200);
+
+	</script>
+</body>
+</html>

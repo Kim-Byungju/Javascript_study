@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="init()">
+	<canvas 
+		id="myCanvas"
+		width="1800"
+		height="800"
+		style="background: green; border: 20px solid #cd853f;
+		text-align: center;"	
+	>
+
+	</canvas>
+	<script>
+		let canvas, context;
+		function init(){
+			let canvas = document.getElementById('myCanvas');
+			canvas.style.width=window.innerWidth;
+			context = canvas.getContext('2d');
+
+			context.lineWidth=2;
+			context.strokeStyle='white';
+
+			canvas.addEventListener('mousemove',move,false);
+			canvas.addEventListener('mousedown',down,false);
+			canvas.addEventListener('mouseup',up,false);
+			canvas.addEventListener('mouseout',out,false);
+
+		}
+		let startX=0; startY=0;
+		let dragging = false;
+		function draw(curX,curY){	
+			context.beginPath();
+			context.moveTo(startX,startY);
+			context.lineTo(curX,curY);
+			context.stroke();
+
+		}	
+		function move(e){
+			if(!dragging){
+				return;
+			}
+			let curX=e.offsetX, curY=e.offsetY;
+			draw(curX,curY);
+
+			startX = curX;
+			startY = curY;
+		}
+		function down(e){
+			startX = e.offsetX;
+			startY = e.offsetY;
+			dragging = true;
+		}
+		function up(e){
+			dragging = false;
+		}
+		function out(e){
+			dragging = false;
+		}
+	</script>
+</body>
+</html>

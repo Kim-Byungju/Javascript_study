@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 
+	rect(x,y,w,h) - 사각형 경로에 x,y,w,h 적용	
+	strokeRect(x,t,w,h)
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<canvas
+	id="myCanvas"
+	style="background: aliceblue;"
+	width="500"
+	height="500">
+
+	</canvas>
+	<script>
+		let canvas = document.getElementById('myCanvas');
+		let context = canvas.getContext('2d');
+
+		//경로로 그린 사각형	
+		context.beginPath();
+		context.strokeStyle="red";
+		for(i=0; i<10; i++){
+			context.rect(10+i*40,10+i*10,50,50);
+		}
+		context.stroke();
+
+		//외곽선이 있는 직접그린 사각형
+		context.lineWidth=10;
+		context.strokeStyle="green";
+		context.strokeRect(50,250,100,100);
+
+		//채워진 사각형
+		context.fillStyle="pink";
+		context.lineWidth='20';
+		context.fillRect(200,250,150,150);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>오륜기그리기</h3>
+	<hr>
+	<canvas id='canvas' width="600" height="600" style="background: aliceblue;"></canvas>
+	<script>
+		let canvas = document.getElementById('canvas');
+		let context = canvas.getContext('2d');
+
+		context.beginPath();
+		context.strokeStyle='black';
+		context.lineWidth=3;
+		context.arc(210,200,50,Math.PI/1000,false);
+		context.stroke();
+
+		context.beginPath();
+		context.strokeStyle='skyblue';
+		context.lineWidth=3;
+		context.arc(100,200,50,Math.PI/1000,false);
+		context.stroke();
+
+		context.beginPath();
+		context.strokeStyle='red';
+		context.lineWidth=3;
+		context.arc(320,200,50,Math.PI/1000,false);
+		context.stroke();
+
+		context.beginPath();
+		context.strokeStyle='green';
+		context.lineWidth=3;
+		context.arc(255,260,50,Math.PI/1000,false);
+		context.stroke();
+
+		context.beginPath();
+		context.strokeStyle='yellow';
+		context.lineWidth=3;
+		context.arc(150,260,50,Math.PI/1000,false);
+		context.stroke();
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>drawCircle 만들기</h3>
+	<hr>
+	<canvas id="canvas" width="600" height="600"
+			style="background: aliceblue;">
+	</canvas>
+	<script>
+		let canvas = document.getElementById('canvas');
+		let context = canvas.getContext('2d');
+
+		context.beginPath();
+		context.strokeStyle='black';
+		context.arc(300,300,200,Math.PI/1000,false);
+		context.stroke();
+
+		context.beginPath();
+		context.strokeStyle='black';
+		context.arc(450,430,70,Math.PI/1000,false);
+		context.stroke();
+
+	</script>
+
+</body>
+</html>

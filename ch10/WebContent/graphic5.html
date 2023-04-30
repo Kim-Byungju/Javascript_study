@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<canvas
+	id="myCanvas"
+	style="background: aliceblue;"
+	width="1600"
+	height="800">
+	</canvas>
+	<script>
+		let canvas= document.getElementById('myCanvas');
+		let context = canvas.getContext('2d');
+
+		context.beginPath();
+		context.strokeStyle = 'blue';
+		context.rect(300,100,500,500);
+		for(i=0; i<300; i++){
+			context.rect(300+i, 100+i,500-(i*2), 500-(i*2));
+		}
+		context.stroke();
+
+		context.beginPath();
+		context.strokeStyle='#a91900ff'
+		context.lineWidth=40;
+		context.arc(1000,500,150,0,(1.5*Math.PI),false)
+		context.closePath();
+		context.stroke();
+		context.fillStyle="yellow"
+		context.fill();
+
+		context.beginPath();
+		context.strokeStyle='green';
+		context.arc(980,200, 100,1,3*Math.PI,true);
+		context.stroke();
+	</script>
+</body>
+</html>
