@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- 
+	Geolocation API
+		- 위치를 추적하기위해 사용한다.
+		- 사용자의 허가를 요구받는 명시적인 함수를 제공하지 않는다.
+
+		-navigator.geolacation
+			. coords.latitude : 위도
+			. coords.longtitude : 경도
+			. coords.altitude : 고도
+			. coords heading
+			. coords speed
+			-------------------------
+			getCurentPosition(successCallback, erroCallback, options)
+				- successCallback(){}:성공햇을떄
+				- errorCallback(){}:실패했을떄 호출
+				(오류코드)
+					. 위치정보수집권한을 얻지 못할경우 1 (Permission_denie..)
+					. 위치정보를 얻지 못했을 경우 2
+					. 제한시간을 초과한 경우 4
+					. 알수 없는 경우
+				
+				- options : 선택사항 
+					. enableHighAccuracy = true/false
+					. timeout : 정보파악에 대한 시간제한(ms)
+					. maximumAge: 파악된 정보에 대한 제한시간설정
+									(0: 항생 새로운 위치정보를 요청하게된다)
+			
+			watchPosition(): 위치가 변경될떄 마다 업데이트 되는 위치정보를 지속적으로 반환
+			clearWatch() : watch 동작종료
+
+
+		- 사용자의 위치 - position 객체
+						.Coordinates 개체
+						.TimeStamp 객체
+			.Coordiates 객체
+				. latitude 위도
+				. longitude 경도
+				. altitude 고도(null)
+				----------------
+				accuracy 위도/경도의 오차범위
+				altitudeAccuracy 고도의 오차범위
+				----------------
+				heading     0~360도 이동방향
+				speed		미터단위 이동속도
+
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(success);
+		alert("성공시마스");
+	} else{
+		alert("실패데스")
+	}
+	function success(position){
+		let lat = position.coords.latitude; //위도
+		let lon = position.coords.longtitude;//경도
+		let acc = position.coords.accuracy; //정확도
+
+		lat = lat.toPrecision(5);
+		lon = lon.toPrecision(6);  //유효한 6자리
+		acc = acc.toPrecision(6);
+
+		document.write(`<h1>현재위치 : 위도-${lat},경도${lon}</h1>`);
+		document.write(`<h1>정확도${acc}</h1>`);
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

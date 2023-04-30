@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+<meta name="viewport" 
+      content="initial-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<style type="text/css">
+	  html { height: 100% }
+	  body { height: 100%; margin: 0px; padding: 0px }
+	  #map_canvas { height: 100% }
+</style>
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyBXZkhXRxQhNSd6UlcsxzVU9JjwZa2I2bc&sonsor=true" type="text/javascript"></script>
+<script type="text/javascript"    src="http://maps.google.com/maps/api/js?v=3.1&sensor=true">
+</script>
+
+<script type="text/javascript">
+	document.write(navigator.geolocation);  
+</script>
+ 
+<script>
+
+	
+    var map;    // 지도 객체변수선언
+    var geodan = new google.maps.LatLng(0,0);   // 구글지도 위치객체 생성 
+    
+    //지도의 이미지타입 객체생성 - json방식
+    var osmMapType = new google.maps.ImageMapType(
+    		
+    				{
+						getTileUrl: function(coord, zoom) {
+							return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
+					},
+					
+					tileSize: new google.maps.Size(256, 256),
+					isPng: true,
+					alt: "OpenStreetMap layer",
+					name: "OpenStreetMap",
+					maxZoom: 19
+			});
+ 
+    
+    // 초기화함수
+	function initialize() {
+		
+		//1. 맵 옵션객체 생성
+		var mapOptions = {
+	  	  	  zoom: 17,          
+	  	  	  center: geodan,
+	  	  	  mapTypeId: 'OSM',          
+	  	  	  mapTypeControlOptions: {   // 지도타입:  도로지도 - ROADMAP,  위성지도-SATELLITE, 혼합지도-HYBRID >> 위성/혼합은 지원안됨(유료?)
+							  	  	  	  mapTypeIds: ['OSM', google.maps.MapTypeId.ROADMAP],   
+							  	  	  	  style: google.maps.MapTypeControlStyle.DROPDOWN_MENU   
+	  	  	 						 }
+	  	};
+		
+		//2. 지도생성 - 위에서 만든 옵션과,  출력할 요소(태그)를 매개변수로 넣는다.
+		map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+		
+		map.mapTypes.set('OSM',osmMapType);  //맵타입을  OSM이름으로  위에서 만들어 놓은 지도이미지객체 osMapType을 바인딩설정한다. 
+		map.setMapTypeId('OSM');  //맵타입 아이디로  OSM을 설정한다.
+	}
+ 
+
+	
+	//만약  geolocation서비스를 지원한다면...
+    if(navigator.geolocation) {
+    	
+    	//현재의 위치정보를 1회 가져온다.
+		navigator.geolocation.getCurrentPosition(
+				
+				//1. 위치정보파악을 성공했을때의  콜백함수
+				function(pos) 
+				{
+			                    // 현재 사용자의 위치를 찾은 값이다.
+								var latitude  = pos.coords.latitude;   // 위도
+								var longitude = pos.coords.longitude;  // 경도
+
+								// 1.지도에 현재위치 객체생성 - json방식
+								var options = {
+									 			position:new google.maps.LatLng(latitude, longitude),
+									 			title:"현재 위치"
+											  };
+							
+								// 2.marker객체 생성: 위에서 만든 options 객체를 매개변수로 넣어서  생성한다. 	
+								var marker = new google.maps.Marker(options);
+								
+								// 3. 위치 원표시 객체 생성 - json방식  
+								var circle = new google.maps.Circle(
+											{
+												map:map, 
+												radius:pos.coords.accuracy 
+											}
+										);
+								
+								//   반경그리기 - 위에서 만든 circle객체에 bindTo(위치매개값,마크객체,position매개값)활용해서 그린다.
+								circle.bindTo('center', marker, 'position');   // 바인딩하고								
+								marker.setMap(map);                            // 지도에 붙인다.
+					
+								map.setCenter( new google.maps.LatLng(latitude, longitude)); //센터를  현재 사용자의 위치로 설정 
+					
+				}, 
+				
+				//2. 실패한 경우에 대응하는 함수
+				function(error) {
+									console.log(error.message);
+								},
+				
+				//3. 옵션
+				{enableHighAccuracy:true});
+	}
+</script>
+<body onload="initialize()">
+
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+  
+</body>
+</body></html>
