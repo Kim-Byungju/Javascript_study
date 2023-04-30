@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-3.6.4.js"></script>
+<script>
+	$(()=>{
+		$("#left").click(function(){
+			$('#box2').animate({left:"30px"},1);
+		})
+	});
+
+	$(()=>{
+		$("#right").click(function(){
+			$('#box2').animate({right:"30px"},1);
+		})
+	});
+
+	$(()=>{
+		$("#top").click(function(){
+			$('#box2').animate({top:"30px"},1);
+		})
+	});
+
+	$(()=>{
+		$("#bottom").click(function(){
+			$('#box2').animate({bottom:"30px"},1);
+		})
+	});
+</script>
+</head>
+<body>
+	<p>
+		<button id="left" type="button">◀</button>
+		<button id="right" type="button">▶</button>
+		<button id="bottom" type="button">▼</button>
+		<button id="top" type="button">▲</button>
+	</p>
+	<div id="box2" style="text-align: center; color: white; box-shadow: 2px 2px 5px blue; width: 200px; height: 200px; background: red; position: absolute;">박스2
+
+	</div>
+</body>
+</html>

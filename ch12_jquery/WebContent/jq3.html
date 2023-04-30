@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-3.6.4.js"></script>
+<script>
+	//자바스크립트
+	window.onload = function(){
+		const divs = document.getElementsByTagName('div');
+		const hasClass = (elm,cls)=> 
+			new RegExp(`${cls}`).test(`${elm.className}`);
+		for(let div of divs){
+			if(hasClass(div,'ps') && !hasClass(div,'hg')) {
+				div.clsssName += 'hg';
+
+			}
+		}
+	}
+	//제이쿼리
+	$(()=>{
+		$('div.ps').addClass('hg');
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

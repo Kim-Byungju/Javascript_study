@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- 
+	$('선택요소').html('새요소') 선택한 요소의 하위요소들을 새요소로 변경
+	$('선택요소').text('새텍스트') 선택한 요소의 텍스트생성
+	$('선택요소').text() 			선택한 요소의 텍스트 가져오기
+	$('선택요소').text(function(index,t)) 해당 인덱스 문자를 t로 
+
+	$('선택요소').append('새요소')  선택요소의 마지막 자식으로
+	$('선택요소').prepend('새요소') 선택요소의 첫번쨰 자식으로 
+	$('새요소').insertBefore('기준요소') 
+	$('새요소').insertAfter('기준요소') 
+	$('선택요소').clone(true/false) 선택요소를 복제(true : 하위요소 포함)
+	$('선택요소').remove()
+
+	$('선택요소').attr(속성) 속성값 읽기
+	$('선택요소').attr('속성','값') 속성지정
+	$('선택요소').addClass("클래스명")
+	$('선택요소').removeClass("클래스명")
+	$('선택요소').toggleClass("클래스명")
+	$('선택요소').hasClass("클래스명") 해당클래스이면 true반환
+	$('선택요소').wrapClass("<div></div>") 해당요소를 div로 감싼다.
+	$('선택요소').wrapAll("<div></div>")선택요소 전체를 div로 감싼다.
+	
+	$.each(배열객체,function(index,value){})
+	$.map(배열객체,function(value,index){})
+	
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-3.6.4.js"></script>
+<script>
+	$(()=>{
+		// theTitle 클래스에  클래스요소를 <a href='' >HTML 조작</a2>
+		$(".theTitle").html('<a href="#">HTML조작</a>');
+		//obj1클래ㅐ스의 택스ㅌ트를 'list1'을 list4로 변경
+		$(".obj1").text("list4");
+		// list3 아이디요소의 마지막 요소로 <li>새로 추가한 요소_끝</li>추가
+		$("#list3").append('<li>새로 추가한 요소_끝</li>');
+		// list3 아이디요소의 맨앞으로  <li>새로 추가한 요소_앞</li>추가
+		$("#list3").prepend('<li>새로 추가한 요소_앞</li>');
+		//<li> insertBefore로 추가한 새오운 요소</li>를 lsit3아이디의 자식 li 5번(eq(4)쨰 앞에주기 
+		$('<li>새로 추가한 요소_앞</li>').insertBefore('#list3>li:eq(4)');
+		//<li> insertBefore로 추가한 새오운 요소</li>를 list3 아이디의6번쨰 뒤에 추가
+		$('<li>새로 추가한 요소_앞</li>').insertBefore('#list3>li:eq(5)');
+		//list3 아이디의 자손이 li중에 첫번쨰 요소의 class속성 읽어와서 alert()출력
+		
+		//list3 아이디의 자손이 li중에 첫번쨰 요소의 클래스를 obj_new로 변경
+		$('#list>first-child').removeClass();
+		$('#list>first-child').addClass('obj_new');
+		//obj_new 클래스를 가진요소의 배경색을 skyblue, border 3px solid #f0f로 글자색 blue
+		$('.obj_new').css("background", "skyblue")
+		//obj클래스요소의 글자색을 red
+
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h2 class="theTitle">HTML조작</h2>
+		<ul id="list3">
+			<li class="obj1">list1</li>
+			<li>list2</li>
+			<li>list3</li>
+		</ul>
+	</div>
+
+</body>
+</html>

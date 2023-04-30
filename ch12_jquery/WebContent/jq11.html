@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 
+		이벤트 
+			.직접적용
+				선택자.click(function(event){
+				});
+ 
+				선택자.on("click", function(){
+
+				});
+			
+			.강제적용 - trigger
+					 선택자.on("click",function(){
+					 }).trigger("click");
+
+					 $("btn:eq(2)").on("Click",function(){
+						$("btn:eq(0)").trigger("click")
+
+					 });
+
+					 stop(clearQueue, jumpToEnd)
+					 stop()==stop(false, false) : 현재적용되는 애니메이션 증지 , 다른 애니메이션 실행
+					 stop(ture) : 현재 애니메이션을 중지하고 다음에 대기하고있던 애니메이션을 제거
+					 stop(false,true) : 현재 적용되는 애니메이션을 건너뛰고 ,다음에 대기하고있던 애니메이션 실행 
+					 stop(false,false) : 현재 적용되는 애니메이션을 건너뛰고 ,다음에 대기하고있던 애니메이션 제거 
+
+-------------------------------------------------------------------------------------------------
+					
+			애니메이션
+					 $(선택요소).animate({속성:속성값,속성:속성값...},반응속도,콜백함수));
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{margin: 0; padding: 0;}
+	#box{
+		width: 100px; height: 100px;
+		background: #f00;
+		position: relative;
+	}
+</style>
+<script type="text/javascript" src="./js/jquery-3.6.4.js"></script>
+<script>
+	$(()=>{
+		$("#box").click(function(){
+			$('#box').animate({
+				left:"950px",top:"200px",width:"500px",height:"500px",
+				opacity:0.5
+			},2000)
+			.animate({
+				left:"0", top:"0",width:"100px",height:"100",opcity:1
+			},2000)
+
+			});
+		});
+</script>
+</head>
+
+<body>
+	<div id="box">박스</div>
+</body>
+</html>

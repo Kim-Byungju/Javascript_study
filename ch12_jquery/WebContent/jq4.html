@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-3.6.4.js"></script>
+<script>
+	$(()=>{
+		//list1아이디 자손 li들중  홀수만 배경색을 yellow 
+		$("#list1>li:even").css("background","yellow");
+		
+		//list1 아이디 자손 li들중 짝수만 배경색을 lightgray로
+		$("#list1>li:odd").css("background","lightgray");
+		
+		//list1아이디 자손 li중 첫번쨰인 글자색을 red
+		$("#list1>li:first").css("color","red");
+		
+		//list1 아이디 자손 li중 마지막만 글자색을 green로
+		$("#list1>li:last").css("color","red");
+		
+		//list1 아이디의 인덱스가 2인 요소의 글자스타일은 italic로
+		$("#list1:eq(1)").css("font-family","italic")
+		$("#list1").eq(1).css("font-style","italic");
+		
+		//list1 아이디 자손중 li중 3번쨰 이전까지의 요소에만 2px dotted aqua border 속성지정
+		$("#list1>li:lt(2)").css("border","2px dotted aqua")
+		
+		//list1 아이디 자손중 li중 3번쨰 이후들의 요소에만 2px purple solid border 속성지정
+		$("#list1>li:gt(2)").css("border","2px solid purple")
+		
+		//list2 아이디의 자손 ㅣli중 2의 배수인 요소들의 배경색을 orange색
+		$("#list2>li:even").css("background","orange")
+		
+		//list2아이디의 자손  li중 "리스트11" 이라는 내용이 포함된 요소만 글자색 빨강
+		$("#list2>li:contains('리스트11')").css("color","red");
+		
+		//list2 아이디의 자손 li중 span요소를 가지고있는  요소만 글자색을 aqua로
+		$("#list2>li:has(span)").css("color","aqua");
+		
+		//list2 아이디의 자손 li중 theObj클래스인 요소의 글자크기를 20px
+		$('#list2>li').filter('.theObj').css("font-size","20px");
+		
+		//list2 아이디의 자손 ㅣli중 a태그를 찾아서 그 배경색을 발강색
+		$('#list2>li').find('a').css("background","red");
+
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>탐색 선택자 활용</h1>
+		<h2>탐색선택자</h2>
+		<ul id="list1">
+			<li>리스트1</li>
+			<li>리스트2</li>
+			<li>리스트3</li>
+			<li>리스트4</li>
+			<li>리스트5</li>
+			<li>리스트6</li>
+			<li>리스트7</li>
+		</ul>
+		<ul id="list2">
+			<li>리스트8</li>
+			<li class="theObj">리스트9</li>
+			<li><span>리스트10</span></li>
+			<li>리스트11</li>
+			<li><a href="#">리스트12</a></li>
+			<li>리스트13</li>
+			<li>리스트14</li>
+		</ul>
+	</div>
+</body>
+</html>

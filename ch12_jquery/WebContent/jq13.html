@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" 
+	  content="width=device-width, initial-scale=1,
+			   minimum-scale=1, maximum-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/swiper.min.css">
+<script type="text/javascript" src="./js/jquery-3.6.4.js"></script>
+<script type="text/javascript" src="./js/swiper.min.js"></script>
+<style>
+	*{
+		margin: 0; padding: 0;
+	}
+	body{
+		font-family: "굴림",sans-serif;
+		font-size: 14px;
+		color: #FFF;
+	}
+	header{
+		height: 80px;
+		background-color: #000;
+		text-align: center;
+		line-height: 80px;
+	}
+	.visual .swiper-container{
+		max-width: 1920px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.visual img{
+		vertical-align: top;
+		width: 100%;
+	}
+	.visual .swiper-pagination{
+		position: absolute;
+		left: 0;
+		bottom: 3%;
+		z-index: 100;
+		text-align: center;
+	}
+	.visual .arrow{
+		position: absolute;
+		top: 50%;
+		font-size: 25px;
+		background: #000;
+		color: #fff;
+		z-index: 100;
+		line-height: 1;
+		margin-top: -20px;
+		padding: 10px;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	.visual .next{
+		left: 10px;
+
+	}
+	.visual .pre{
+		right: 10px;
+	}
+	.content{
+		height: 330px;
+		background: #ddd;
+		text-align: center;
+		line-height: 330px;
+	}
+	.footer{
+		height: 100px;
+		border-top: 1px solid #ccc;
+		text-align: center;
+		line-height: 100px;
+	}
+
+</style>
+</head>
+<body>
+	<header><h1>헤더</h1></header>
+	<div class="visual">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><a href="#"><img src="./img/backimg1.jpg"></a></div>
+				<div class="swiper-slide"><a href="#"><img src="./img/backimg2.jpg"></a></div>
+				<div class="swiper-slide"><a href="#"><img src="./img/backimg3.jpg"></a></div>
+				<div class="swiper-slide"><a href="#"><img src="./img/backimg4.jpg"></a></div>
+				<div class="swiper-slide"><a href="#"><img src="./img/backimg5.jpg"></a></div>
+				<div class="swiper-slide"><a href="#"><img src="./img/backimg6.jpg"></a></div>
+				<div class="swiper-slide"><a href="#"><img src="./img/backimg7.jpg"></a></div>
+				<div class="swiper-slide"><a href="#"><img src="./img/backimg8.jpg"></a></div>
+				<div class="swiper-slide"><a href="#"><img src="./img/backimg9.jpg"></a></div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<div class="next arrow">&lt;</div>
+			<div class="pre arrow">&gt;</div>
+		</div>
+	</div>
+	<section class="content"><h1>콘텐츠</h1></section>
+	<footer><h1>푸터</h1></footer>
+	<script>
+		let swiper = new Swiper('.swiper-container',{
+			autoplay:{
+				delay:2000,
+				disableOnInteraction:false
+			},
+			slidesPerView:1,
+			loop:true,
+			pagination:{
+				el:'.swiper-pagination',
+				clickable:true,
+			},
+			navigation:{
+				nextEl:'.next',
+				preEl:'.pre'
+			}
+		});
+	</script>
+</body>
+</html>
