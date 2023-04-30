@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- 
+	1. margin
+		
+		; 일괄지정: m-1 ~ m-5 
+
+			m-1 : 글자크기(16)*0.25 = 4 -- 4px  -1/4
+			m-2 : 글자크기(16)*0.5 = 8 -- 8px  -1/2
+			m-3 : 글자크기(16)*1.0  	 --16px
+			m-4 : 글자크기(16)*1.5	 --24px
+			m-5 : 글자크기(16)*3.		--48px
+			m-auto : 자동으로 여백조정
+			ml-auto : 왼쪽 마진을 최대한 확보하라는 의미 >> 오른쪽 정렬
+			ml-auto : 오른 마진을 최대한 확보 >>왼쪽으로 정렬
+			*padding도  동일
+				my					mt
+			mx		mx			ml		mr
+				my					mb
+		
+
+	2. padding
+		
+		;일괄지정:p-1 ~ p-5
+				py					pt
+			px		px			pl		pr
+				py					pb
+
+
+	3. width/height
+		
+		;w-25/50/75/100
+		;h-25/50/75/100
+
+		*inline-block: .d-inline-block
+	
+	4. 배경색: bg-info, bg-warning, bg-primary, bg-secondary
+
+	5. 글자색 : text-info, text-warning
+	6. 링크색: a태그안에서 글자색 클랫래스 지정 
+	7. 글자크기 : lighter, smaller text, smaller 등..
+		. h1 : 36px
+		. h2 : 30px
+		. h3 : 24px
+	8.기본줄간격 : 1.428px
+	9.p요소의 하단 여백 : 10px
+		*<h1 class="small text-muted big-light">
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<style>
+	.container{
+		background: lightgray;
+	}
+	.row{
+		display: inline-block;
+	}
+	.a{
+		
+		background-color: aqua;
+		border: 1px solid black;
+		height: 10px;
+		width: 1000px;
+		
+		
+	}
+	
+</style>
+</head>
+<body>
+	<h3>부트스트랩 기본높이</h3>
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="a  col-md-3" ></div>
+			<div class="a col-md-3 "></div>
+			<div class="a  col-md-3 "></div>
+			<div class="a  col-md-3 " ></div>
+		</div>
+	</div>
+	
+
+	<script src="./js/jquery-3.6.4.js"></script>
+	<Script>
+
+	</Script>
+	<script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
